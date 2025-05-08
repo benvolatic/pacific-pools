@@ -12,8 +12,11 @@ export default function Navbar() {
             (425) 336-9310
           </a>
           <span>|</span>
-          <a href="mailto:pacificpools@example.com" className="hover:underline">
-            pacificpools@example.com
+          <a
+            href="mailto:layne.mcnair@pnwpoolsandcocrete.com"
+            className="hover:underline"
+          >
+            layne.mcnair@pnwpoolsandcocrete.com
           </a>
         </div>
       </div>
