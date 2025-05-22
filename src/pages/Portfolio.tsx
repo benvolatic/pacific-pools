@@ -54,7 +54,7 @@ export default function Portfolio() {
   return (
     <div className="p-8 text-center">
       <h1 className="text-4xl font-bold mb-10">Our Portfolio</h1>
-      <div className="grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+      <div className="grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         {dummyImages.map((src, index) => (
           <motion.div
             key={index}
