@@ -54,7 +54,7 @@ export default function Portfolio() {
   return (
     <div className="p-8 text-center">
       <h1 className="text-4xl font-bold mb-10">Our Portfolio</h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6s">
         {dummyImages.map((src, index) => (
           <motion.div
             key={index}
@@ -65,7 +65,7 @@ export default function Portfolio() {
             <img
               src={src}
               alt={`Pool ${index + 1}`}
-              className="object-cover w-full h-64"
+              className="w-full h-auto rounded-md"
             />
           </motion.div>
         ))}
