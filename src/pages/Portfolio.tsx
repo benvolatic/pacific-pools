@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 // Import only existing images
 import Sauerseattleplungepool from "../assets/Sauerseattleplungepool.jpg";
