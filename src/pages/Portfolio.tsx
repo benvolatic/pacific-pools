@@ -218,7 +218,6 @@ export default function Portfolio() {
     return dummyImages.slice(startIndex, endIndex);
   };
 
-  // ✅ Arrow key + escape handling
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (!modalOpen || currentIndex === null) return;
@@ -236,8 +235,17 @@ export default function Portfolio() {
       }
     };
 
+    if (modalOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+
     window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
+    return () => {
+      document.body.style.overflow = "";
+      window.removeEventListener("keydown", handleKeyDown);
+    };
   }, [modalOpen, currentIndex]);
 
   return (
@@ -267,7 +275,6 @@ export default function Portfolio() {
         })}
       </div>
 
-      {/* Pagination */}
       <div className="mt-8 flex justify-center items-center space-x-4">
         <button
           onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
@@ -298,7 +305,6 @@ export default function Portfolio() {
         </button>
       </div>
 
-      {/* Modal Viewer */}
       {modalOpen && currentIndex !== null && (
         <div className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50">
           <button
@@ -309,7 +315,7 @@ export default function Portfolio() {
           </button>
 
           <button
-            className="absolute left-4 text-white text-4xl"
+            className="absolute left-4 text-white text-4xl p-4 bg-black bg-opacity-30 rounded-full hover:bg-opacity-50 transition"
             onClick={() =>
               setCurrentIndex((prev) =>
                 prev! > 0 ? prev! - 1 : dummyImages.length - 1
@@ -326,7 +332,7 @@ export default function Portfolio() {
           />
 
           <button
-            className="absolute right-4 text-white text-4xl"
+            className="absolute right-4 text-white text-4xl p-4 bg-black bg-opacity-30 rounded-full hover:bg-opacity-50 transition"
             onClick={() =>
               setCurrentIndex((prev) =>
                 prev! < dummyImages.length - 1 ? prev! + 1 : 0
