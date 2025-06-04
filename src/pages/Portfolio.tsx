@@ -3,7 +3,6 @@ import { useState } from "react";
 
 // Import only existing images
 import Sauerseattleplungepool from "../assets/Sauerseattleplungepool.jpg";
-import SauerPool1 from "../assets/Sauer pool 1.jpeg";
 import Sammamishproject from "../assets/Sammamishproject.jpeg";
 import Sammamishmodern from "../assets/Sammamishmodern.jpeg";
 import Redondospa4 from "../assets/Redondospa4.jpg";
@@ -62,7 +61,6 @@ import Mcgraw2 from "../assets/Mcgraw2.jpeg";
 import McgrawSplash from "../assets/Mcgraw splash.jpeg";
 import Jump2 from "../assets/jump2_A91W9055.jpeg";
 import Johnsonlaminarfountains from "../assets/Johnsonlaminarfountains.jpg";
-import JohnsonPool2 from "../assets/Johnson pool2.jpeg";
 import JohnsonPool1 from "../assets/Johnson pool 1.jpeg";
 import Infitityfire from "../assets/Infitityfire.webp";
 import GuestHouse17 from "../assets/GuestHouse-17.jpeg";
@@ -106,7 +104,6 @@ import Abottproject2 from "../assets/Abottproject2.jpeg";
 const dummyImages = [
   // Only include images that exist
   Sauerseattleplungepool,
-  SauerPool1,
   Sammamishproject,
   Sammamishmodern,
   Redondospa4,
@@ -165,7 +162,6 @@ const dummyImages = [
   McgrawSplash,
   Jump2,
   Johnsonlaminarfountains,
-  JohnsonPool2,
   JohnsonPool1,
   Infitityfire,
   GuestHouse17,
