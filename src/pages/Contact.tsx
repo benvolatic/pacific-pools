@@ -1,7 +1,12 @@
 "use client";
 
 import { useState } from "react";
-import HeroImage1 from "../assets/HeroImage1.jpg"; // replace/add more as needed
+import Abbotproject2 from "../assets/Abottproject2.jpeg";
+import CompletedPool1Jump from "../assets/CompletedPool1Jump.jpeg";
+import Covingtonservice from "../assets/Covingtonservice.jpg";
+import Davisproject6 from "../assets/Davisproject6.jpg";
+import GuestHouse17 from "../assets/GuestHouse-17.jpeg";
+import HeroImage2 from "../assets/HeroImage2.jpg";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -56,14 +61,19 @@ export default function ContactPage() {
         Send us a message and we'll get back to you shortly!
       </p>
 
-      <div className="flex flex-col md:flex-row w-full max-w-6xl gap-6">
-        {/* Left image */}
-        <div className="flex-1 hidden md:block">
-          <img
-            src={HeroImage1}
-            alt="Pool example"
-            className="rounded-lg w-full h-full object-cover"
-          />
+      <div className="flex flex-col md:flex-row w-full max-w-7xl gap-6">
+        {/* Left side image column */}
+        <div className="flex-1 hidden md:flex flex-col gap-4">
+          {[Abbotproject2, CompletedPool1Jump, Covingtonservice].map(
+            (src, i) => (
+              <img
+                key={i}
+                src={src}
+                alt={`left-${i}`}
+                className="rounded-lg w-full object-cover max-h-52"
+              />
+            )
+          )}
         </div>
 
         {/* Form */}
@@ -125,13 +135,16 @@ export default function ContactPage() {
           </div>
         </form>
 
-        {/* Right image */}
-        <div className="flex-1 hidden md:block">
-          <img
-            src={HeroImage1}
-            alt="Another angle"
-            className="rounded-lg w-full h-full object-cover"
-          />
+        {/* Right side image column */}
+        <div className="flex-1 hidden md:flex flex-col gap-4">
+          {[Davisproject6, GuestHouse17, HeroImage2].map((src, i) => (
+            <img
+              key={i}
+              src={src}
+              alt={`right-${i}`}
+              className="rounded-lg w-full object-cover max-h-52"
+            />
+          ))}
         </div>
       </div>
     </div>
