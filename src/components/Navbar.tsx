@@ -16,7 +16,7 @@ export default function Navbar() {
             href="mailto:layne.mcnair@pnwpoolsandcocrete.com"
             className="hover:underline"
           >
-            juliocastillo97@outlook.com
+            julioc.pnwpools@gmail.com
           </a>
         </div>
       </div>
