@@ -24,14 +24,29 @@ export default function ModalForm({
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log(formData);
 
-    // TODO: Hook this up to EmailJS, Formspree, etc.
-    alert("Form submitted! (You will connect it to real email soon)");
+    try {
+      const response = await fetch("https://formspree.io/f/xblylozk", {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
 
-    onClose(); // Close modal after submit
+      if (response.ok) {
+        alert("Quote request submitted successfully!");
+        onClose();
+      } else {
+        alert("There was a problem submitting the form. Please try again.");
+      }
+    } catch (error) {
+      console.error("Formspree error:", error);
+      alert("Something went wrong. Please try again later.");
+    }
   };
 
   return (
