@@ -203,22 +203,42 @@ const dummyImages = [
   Abottproject2,
 ];
 
-const ITEMS_PER_PAGE = 9; // Show 9 images per page
+const ITEMS_PER_PAGE = 9;
 
 export default function Portfolio() {
   const [modalOpen, setModalOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState<number | null>(null);
   const [currentPage, setCurrentPage] = useState(1);
 
-  // Calculate total pages
   const totalPages = Math.ceil(dummyImages.length / ITEMS_PER_PAGE);
 
-  // Get current page images
   const getCurrentPageImages = () => {
     const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
     const endIndex = startIndex + ITEMS_PER_PAGE;
     return dummyImages.slice(startIndex, endIndex);
   };
+
+  // ✅ Arrow key + escape handling
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (!modalOpen || currentIndex === null) return;
+
+      if (e.key === "ArrowRight") {
+        setCurrentIndex((prev) =>
+          prev! < dummyImages.length - 1 ? prev! + 1 : 0
+        );
+      } else if (e.key === "ArrowLeft") {
+        setCurrentIndex((prev) =>
+          prev! > 0 ? prev! - 1 : dummyImages.length - 1
+        );
+      } else if (e.key === "Escape") {
+        setModalOpen(false);
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [modalOpen, currentIndex]);
 
   return (
     <div className="p-8 text-center">
@@ -247,7 +267,7 @@ export default function Portfolio() {
         })}
       </div>
 
-      {/* Pagination Controls */}
+      {/* Pagination */}
       <div className="mt-8 flex justify-center items-center space-x-4">
         <button
           onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
@@ -278,7 +298,7 @@ export default function Portfolio() {
         </button>
       </div>
 
-      {/* Modal */}
+      {/* Modal Viewer */}
       {modalOpen && currentIndex !== null && (
         <div className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50">
           <button
