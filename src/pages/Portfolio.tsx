@@ -103,6 +103,7 @@ import Abottproject2 from "../assets/Abottproject2.jpeg";
 
 const dummyImages = [
   // Only include images that exist
+  Barringer6,
   Sauerseattleplungepool,
   Sammamishproject,
   Sammamishmodern,
@@ -191,7 +192,6 @@ const dummyImages = [
   Camposproject,
   Bremertonspa,
   Bealesproject,
-  Barringer6,
   Barringer5,
   Barringer4,
   Barringer3,
