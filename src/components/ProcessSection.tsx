@@ -1,10 +1,24 @@
+// ProcessSection.tsx
 "use client";
 
 import { motion } from "framer-motion";
+import Covingtonservice13 from "../assets/Covingtonservice13.jpg";
+import Redmonddig2 from "../assets/Redmonddig2.jpeg";
 
 export default function ProcessSection() {
   return (
-    <section className="bg-[#f8f9fa] py-20 px-6 text-center">
+    <section className="bg-[#f8f9fa] py-20 px-6 text-center relative overflow-hidden">
+      <img
+        src={Covingtonservice13}
+        alt="Left pool photo"
+        className="absolute top-1/2 left-0 w-1/4 max-w-xs transform -translate-y-1/2 rounded shadow-lg hidden lg:block"
+      />
+      <img
+        src={Redmonddig2}
+        alt="Right pool photo"
+        className="absolute top-1/2 right-0 w-1/4 max-w-xs transform -translate-y-1/2 rotate-90 rounded shadow-lg hidden lg:block"
+      />
+
       <motion.h2
         className="text-4xl font-bold mb-6 text-[#0D3B66]"
         initial={{ opacity: 0, y: 20 }}
@@ -14,7 +28,7 @@ export default function ProcessSection() {
         A Process That Puts Your Family First
       </motion.h2>
       <motion.div
-        className="max-w-4xl mx-auto text-lg text-gray-700 space-y-6"
+        className="max-w-4xl mx-auto text-lg text-gray-700 space-y-6 relative z-10"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ delay: 0.2, duration: 1 }}
