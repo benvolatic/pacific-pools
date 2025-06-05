@@ -1,14 +1,20 @@
+// FinalCTASection.tsx
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import Middletonnight from "../assets/Middletonnight.jpeg";
 
 export default function FinalCTASection() {
   return (
-    <section className="bg-[#0D3B66] text-white py-20 text-center">
+    <section
+      className="relative h-[80vh] bg-cover bg-center flex items-center justify-center text-white text-center px-6"
+      style={{ backgroundImage: `url(${Middletonnight})` }}
+    >
+      <div className="absolute inset-0 bg-black/50 z-0" />
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 1 }}
-        className="max-w-3xl mx-auto"
+        className="relative z-10 max-w-3xl"
       >
         <h2 className="text-4xl font-bold mb-6">
           Transform Your Backyard Dreams Into Reality
