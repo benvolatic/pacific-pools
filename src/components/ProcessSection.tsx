@@ -11,12 +11,12 @@ export default function ProcessSection() {
       <img
         src={Covingtonservice13}
         alt="Left pool photo"
-        className="absolute top-1/2 left-0 w-1/4 max-w-xs transform -translate-y-1/2 rounded shadow-lg hidden lg:block"
+        className="absolute top-1/2 left-4 w-1/4 max-w-xs transform -translate-y-1/2 rounded shadow-lg hidden lg:block"
       />
       <img
         src={Redmonddig2}
         alt="Right pool photo"
-        className="absolute top-1/2 right-0 w-1/4 max-w-xs transform -translate-y-1/2 rotate-90 rounded shadow-lg hidden lg:block"
+        className="absolute top-1/2 right-4 w-1/4 max-w-xs transform -translate-y-1/2 rotate-90 rounded shadow-lg hidden lg:block"
       />
 
       <motion.h2
